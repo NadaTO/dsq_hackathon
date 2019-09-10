@@ -1,0 +1,18 @@
+{
+  "name": "hackathon-persona-app-example",
+  "version": "1.0.0",
+  "description": "Example app for persona",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ilmi Ali",
+  "license": "ISC",
+  "dependencies": {
+    "autobahn": "^19.9.1",
+    "autobahn-xbr": "^19.9.1",
+    "cbor": "^4.3.0",
+    "eth-sig-util": "^2.4.4",
+    "ethereumjs-wallet": "^0.6.3"
+  }
+}
