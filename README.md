@@ -30,7 +30,12 @@ To connect to the realm a password is necessary, which is provided by the group 
 
 ## Chat system
 
-Exchange code snippets or information in a rocket chat - join http://crossbar:3000
+Exchange code snippets or information in a rocket chat - join http://chat.dmp.be.continental.cloud
+
+## Continous Integration
+
+You can use the preapred Gitlab CI setup to deploy your HTML5 application to the destination.
+Please rename the file accordingly. Only commits on MASTER will be deployed.
 
 ## Task 1 - ?? Enter name from earning scheme ??
 After following this section a team will have their own Ethereum wallet with ether and XBR tokens, which are necessary for the participation of the hackathon. The major steps are:
