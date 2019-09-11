@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Pesona App Example</title>
+  <title>Persona App Example</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -53,15 +53,18 @@
   <div class="jumbotron">
     <div class="container">
       <h1>Persona Example App</h1>
-      <p>This is a example app and a template for getting started with Task 3. The persona app uses Bootstrap 4, you can find documentation on Bootstrap components <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_blank">here</a>
+      <p>This is a example app and a template for getting started with Task 4. The persona app uses Bootstrap 4, you can find documentation on Bootstrap components <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_blank">here</a>
       </p>
-      <p><a id="buy_data_button" class="btn btn-primary btn-lg" href="#" role="button">Buy Data</a></p>
-      <p><a id="opt-in-button" class="btn btn-primary btn-lg" href="#" role="button">Opt-In</a></p>
+      <div style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 50px">
+        <p><a id="opt_in_button" class="btn btn-info btn-lg btn-block" href="#" role="button">Opt-In</a></p>
+        <p><a id="buy_data_button" class="btn btn-primary btn-lg btn-block" href="#" role="button" disabled>Start Buying Data</a></p>
+      </div>
     </div>
   </div>
 
   <div class="container">
-
+    <ul id="list-group" class="list-group">
+    </ul>
     <footer>
     </footer>
   </div> <!-- /container -->

@@ -27,7 +27,7 @@ function main(connection) {
 
       await buyer.start(session);
       //Buy and decrypt
-      session.register("team.buy_data", async args => {
+      session.register("persona.buy_data", async args => {
         try {
           await session.subscribe(
             config.TOPIC,
@@ -38,7 +38,7 @@ function main(connection) {
                 const enc = args[1];
                 const cipherText = args[2];
                 const result = await buyer.unwrap(keyID, enc, cipherText);
-                await session.publish('team.service', [result], {aknowledge: true});
+                await session.publish("persona.service", [result], {aknowledge: true});
               } catch (e) {
                 console.log(e);
               }
@@ -50,6 +50,11 @@ function main(connection) {
           return false;
         }
       });
+
+      //Opt-in
+      session.register("persona.opt_in", async (args) => {
+        return true;
+      })
     } catch (e) {
       console.log(e);
     }
