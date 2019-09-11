@@ -4,9 +4,10 @@
   "description": "Install dependencies using ```bash make deps ``` To start the seller run ```bash make seller ``` For buyer ```bash make buyer ```",
   "main": "seller.js",
   "dependencies": {
-    "autobahn": "file:../../../autobahn-js/packages/autobahn",
-    "autobahn-xbr": "file:../../../autobahn-js/packages/autobahn-xbr",
+    "autobahn": "^19.9.1",
+    "autobahn-xbr": "^19.9.1",
     "cbor": "^4.3.0",
+    "eth-sig-util": "^2.4.4",
     "ethereumjs-util": "^6.1.0",
     "uuid-buffer": "^1.0.3",
     "web3": "^1.2.1",
