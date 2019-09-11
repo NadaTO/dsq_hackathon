@@ -1,4 +1,5 @@
-# Continental Hackathon Onboarding
+# Hackathon - Continental Data Square - Monetization Framework
+
 Welcome to the continental.cloud Hackathon.
 Now that you've found your way to the github repo here are the first steps to start with.
 
