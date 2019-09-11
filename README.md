@@ -31,10 +31,8 @@ To connect to the realm a password is necessary, which is provided by the group 
 
 ## Chat system
 
-Exchange code snippets or information in a rocket chat - join
-``` 
-**http://chat.dmp.be.continental.cloud**
-```
+Exchange code snippets or information in a rocket chat - join **http://chat.dmp.be.continental.cloud**
+
 
 ## Continous Integration
 
