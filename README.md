@@ -5,8 +5,8 @@ Now that you've found your way to the github repo here are the first steps to st
 
 The time is limited! You might split up your team into several roles, based on your skillset.
 For example:
-- Service / Backend developer
-- HMI Developer 
+- Service / Backend Developer
+- HMI Developer
 - Designer
 - Presentation & Business
 
@@ -66,7 +66,22 @@ After following this section a team will have their own Ethereum wallet with eth
 
 
 
-## Task 2 - ??
+## Task 2 - Time is money
+After this task you will have a service running that sells some data on the market and earns XBR tokens for your team.
+It will also provide you with data you can use for testing and developing your own service.
+Only one of your team members should run this service at the same time (unless you know what you are doing).
 
+To get it up and running the following steps are needed:
+1. Clone the example code from GitLab and move to the `service/fleet-simulation` folder.
+2. Build the docker container by running `docker build -t fleet-simulation .` (don't forget the dot at the end!).
+3. Modify the env.list file with the required settings. You will need the delegate's private key from the first task and your login credentials to the service router.
+4. Start the docker container via the `docker run -it --env-file env.list fleet-simulation`.
+5. Check the output to see if your data gets bought.
 
-// Maybe we should provide a readme for every of the 4 tasks
+## Task 3 - Become a service provider
+
+TODO!
+
+## Task 4 - Sell your idea
+
+TODO!
