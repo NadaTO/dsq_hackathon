@@ -22,7 +22,7 @@ deploys3:
   image: "xueshanf/awscli"
   stage: deploy
   script:
-    - aws s3 cp app/teamapp index.html s3://${BUCKET_NAME}/apps/${TEAM_NUMBER} --recursive
+    - aws s3 cp app/ s3://${BUCKET_NAME}/apps/${TEAM_NUMBER} --recursive
   only:
     - master
 

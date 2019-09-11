@@ -1,4 +1,5 @@
-# Continental Hackathon Onboarding
+# Hackathon IAA 2019
+# Continental Data Square - Monetization Framework
 Welcome to the continental.cloud Hackathon.
 Now that you've found your way to the github repo here are the first steps to start with.
 
@@ -9,13 +10,13 @@ For example:
 - Designer
 - Presentation & Business
 
-How to start the implementation is dependent on your role. Here is what we have to help you with this.
+How to start your work is dependent on your role. Here is what we have to help you with this.
 If you have any questions you can always ask our experts or team guides to help you.
 
 ## Basic component architecture
 Each team in the hackathon will create microservices. These microservices publish to topics that can be subscribed to. The publishing and subscribing happens through the service router.
 
-The service router can be found at: (URL OF AWS CROSSBARFX)
+The service router can be found at: **wss://dataplane.dmp.be.continental.cloud:8081/ws**
 
 All teams share the service router, however each team is allocated a realm within the service router. Topics are categorized under realms, no two topics should have the same name under a realm.
 
@@ -30,14 +31,14 @@ To connect to the realm a password is necessary, which is provided by the group 
 
 ## Chat system
 
-Exchange code snippets or information in a rocket chat - join http://chat.dmp.be.continental.cloud
+Exchange code snippets or information in a rocket chat - join **http://chat.dmp.be.continental.cloud**
 
 ## Continous Integration
 
 You can use the preapred Gitlab CI setup to deploy your HTML5 application to the destination.
 Please rename the file accordingly. Only commits on MASTER will be deployed.
 
-## Task 1 - ?? Enter name from earning scheme ??
+## Task 1 - Get ready to earn
 After following this section a team will have their own Ethereum wallet with ether and XBR tokens, which are necessary for the participation of the hackathon. The major steps are:
 1. Setup Metamask
 2. Request Ether & XBR
