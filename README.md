@@ -79,9 +79,16 @@ To get it up and running the following steps are needed:
 5. Check the output to see if your data gets bought.
 
 ## Task 3 - Become a service provider
+Upon completion of this task your team will have a service running that buys some data from the fleet simulation and sells something of your chosing to interested parties.
+It will also be useful for providing a service to enhance the life of your persona.
 
+To accomplish this task you will need to do the following:
 TODO!
 
-## Task 4 - Sell your idea
+## Task 4 - Develop vehicle app
+The goal of this task is to develop an HMI application that shows up on the vehicle demonstrator.
+This app should be an HTML5 application that automatically gets deployed on code check-in into the GitLab server.
+It should fulfill the needs of a chosen persona with the help of data provided by your backend service.
 
+The following steps are needed to get it running:
 TODO!
