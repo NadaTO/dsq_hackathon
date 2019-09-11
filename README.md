@@ -54,7 +54,7 @@ After following this section a team will have their own Ethereum wallet with eth
 
 ### 1.2 Request Ether & XBR
 1. Click the menu icon in Metamask and click add new token
-2. Click Custom Token, copy paste the XBR Token address and click next.
+2. Click Custom Token, copy paste the XBR Token addres **0x78890bF748639B82D225FA804553FcDBe5819576** and click next.
 3. From Metamask, copy your Ethereum address and paste it on the  hackathon chat.
 4. We will send you Ether and XBR Token, soon you will see your Ether and XBR Token balance updated.
 
