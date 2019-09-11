@@ -7,7 +7,7 @@ var BN = web3.utils.BN;
 const decimals = new BN("1000000000000000000");
 const connection = new autobahn.Connection({
   url: config.CBFX_URL,
-  realm: "realm1",
+  realm: config.TEAM_RELM,
   type: "websocket",
   serializers: [new autobahn.serializer.CBORSerializer()]
 });
@@ -15,48 +15,41 @@ const connection = new autobahn.Connection({
 function main(connection) {
   connection.onopen = async (session, details) => {
     console.log("Connected to Crossbarfx edge");
-    let balance = {
-      amount: 0,
-      remaining: 0,
-      inflight: 0
-    };
-    const maxPrice = new BN(100).mul(decimals); //Max buy price
+    const maxPrice = new BN(40).mul(decimals); //Max buy price
     //Start buyer witn max buy price/Check with market maker if payment channel exists
     try {
+
       const buyer = new XBR.SimpleBuyer(
-        "0x3E5e9111Ae8eB78Fe1CC3bb8915d5D461F3Ef9A9",
-        "0x2d2719c6a828911ed0c50d5a6c637b63353e77cf57ea80b8e90e630c4687e9c5",
+        config.XBR_MARKET_MAKER_ADDR,
+        config.PERSONA_PRIVKEY,
         maxPrice
       );
-      await buyer.start(session);
-      balance = await buyer.balance();
 
-      //Subscribe to topic
-      session.register("team.backend.subscribe", async args => {
+      await buyer.start(session);
+      //Buy and decrypt
+      session.register("team.buy_data", async args => {
         try {
           await session.subscribe(
-            "vehicle.sumo",
+            config.TOPIC,
             async args => {
               try {
                 //Buy and decrypt
                 const keyID = args[0];
+                const enc = args[1];
                 const cipherText = args[2];
-                console.log(args);
-                const result = buyer.unwrap(keyID, cipherText);
-                console.log("Decrypted");
-                console.log(result);
+                const result = await buyer.unwrap(keyID, enc, cipherText);
+                await session.publish('team.service', [result], {aknowledge: true});
               } catch (e) {
                 console.log(e);
               }
             },
             { match: "prefix" }
           );
+          return true;
         } catch (e) {
-          console.log(e);
+          return false;
         }
       });
-
-      //Buy and decrypt
     } catch (e) {
       console.log(e);
     }
