@@ -38,7 +38,7 @@ Exchange code snippets or information in a rocket chat - join **http://chat.dmp.
 You can use the preapred Gitlab CI setup to deploy your HTML5 application to the destination.
 Please rename the file accordingly. Only commits on MASTER will be deployed.
 
-## Task 1 - ?? Enter name from earning scheme ??
+## Task 1 - Get ready to earn
 After following this section a team will have their own Ethereum wallet with ether and XBR tokens, which are necessary for the participation of the hackathon. The major steps are:
 1. Setup Metamask
 2. Request Ether & XBR
