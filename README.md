@@ -1,4 +1,6 @@
-# Hackathon - Continental Data Square - Monetization Framework
+# Hackathon IAA 2019
+# Continental Data Square - Monetization Framework
+# powered by crossbar.io
 
 Welcome to the continental.cloud Hackathon.
 Now that you've found your way to the github repo here are the first steps to start with.
