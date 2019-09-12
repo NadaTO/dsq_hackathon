@@ -83,7 +83,12 @@ Upon completion of this task your team will have a service running that buys som
 It will also be useful for providing a service to enhance the life of your persona.
 
 To accomplish this task you will need to do the following:
-TODO!
+1. Decide whether you want to develop the service in in Node.js or Python3.
+2. Go to the `service/simple-js` or `service/simple-python` folder.
+3. Adapt the buyer code to use your buyer delegate address and buy data from your fleet-simulation.
+4. Change the seller code to use a new seller delegate key and sell on a topic of your choice.
+5. Forward/filter/transform some data from the seller to your buyer.
+6. Inform your team lead that you accomplished this task to earn the extra tokens.
 
 ## Task 4 - Develop vehicle app
 The goal of this task is to develop an HMI application that shows up on the vehicle demonstrator.
