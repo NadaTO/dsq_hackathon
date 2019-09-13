@@ -5,30 +5,45 @@ var BN = web3.utils.BN;
 var uuid = require('uuid-buffer');
 
 console.log('Running on Autobahn ' + autobahn.version);
+//Private key of your seller delegate
+const SELLER_PRIVATEKEY = "<SELLER_PRIVATE_KEY>";
+//Market maker address
+const MARKET_MAKER_ADDR = "0x3E5e9111Ae8eB78Fe1CC3bb8915d5D461F3Ef9A9";
+//TEAM_ID
+const TEAM_ID = "<TEAM_ID>";
+//TICKET
+const TICKET = "<TICKET>";
+//TOPIC TO SUBSCRIBE TO
+const TOPIC = "<TOPIC>";
 
-// WAMP connection
+//Connect to Crossbarfx node
 var connection = new autobahn.Connection({
     realm: "realm1",
+    authmethods: ["ticket"],
+    authid: TEAM_ID,
+    onchallenge: onchallenge,
     transports: [
-        {
-            //url: 'wss://continental2.crossbario.com/ws',
-            url: 'ws://localhost:8080/ws',
-            type: 'websocket',
-            serializers: [ new autobahn.serializer.CBORSerializer() ],
-        }
+      {
+        url: "wss://continental2.crossbario.com/ws",
+        type: "websocket",
+        serializers: [new autobahn.serializer.CBORSerializer()]
+      }
     ]
-});
+  });
+  
+  //Only for authentication on crossbar
+  function onchallenge(session, method, extra) {
+    if (method === "ticket") {
+      return TICKET;
+    } else {
+      throw "don't know how to authenticate using '" + method + "'";
+    }
+  };
 
 // callback fired upon new WAMP session
 connection.onopen = function (session, details) {
 
     console.log("WAMP session connected:", details);
-
-    // ethereum private key of buyer1 delegate1
-    const seller1_delegate2_pkey = "0xa453611d9419d0e56f499079478fd72c37b251a94bfde4d19872c44cf65386e3";
-
-    // market maker ethereum address
-    const marketmaker_adr = "0x3E5e9111Ae8eB78Fe1CC3bb8915d5D461F3Ef9A9";
 
     // the XBR token has 18 decimals
     const decimals = new BN('1000000000000000000');
@@ -43,20 +58,20 @@ connection.onopen = function (session, details) {
     const apiID = uuid.toBuffer('bd65e220-aef7-43c0-a801-f8d95fa71f39');
 
     // instantiate a simple seller
-    var seller = new xbr.SimpleSeller(marketmaker_adr, seller1_delegate2_pkey);
+    var seller = new xbr.SimpleSeller(MARKET_MAKER_ADDR, SELLER_PRIVATEKEY);
     var counter = 1;
 
-    seller.add(apiID, 'io.crossbar.example', price, key_rotation_interval);
+    seller.add(apiID, TOPIC, price, key_rotation_interval);
 
     var do_publish = function() {
         const payload = {"data": "js-seller", "counter": counter};
 
         // encrypt the XBR payload, potentially automatically rotating & offering a new data encryption key
-        let [key_id, enc_ser, ciphertext] = seller.wrap(apiID, 'io.crossbar.example', payload);
+        let [key_id, enc_ser, ciphertext] = seller.wrap(apiID, TOPIC, payload);
 
         const options = {acknowledge: true};
 
-        session.publish("io.crossbar.example",
+        session.publish(TOPIC,
                         [key_id, enc_ser, ciphertext],
                         {},
                         options).then(
