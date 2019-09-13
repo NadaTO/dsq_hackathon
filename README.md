@@ -16,7 +16,10 @@ If you have any questions you can always ask our experts or team guides to help 
 ## Basic component architecture
 Each team in the hackathon will create microservices. These microservices publish to topics that can be subscribed to. The publishing and subscribing happens through the service router.
 
-The service router can be found at: **wss://dataplane.dmp.be.continental.cloud:8081/ws**
+The service router can be found at:
+```
+wss://dataplane.dmp.be.continental.cloud:8081/ws
+```
 
 All teams share the service router, however each team is allocated a realm within the service router. Topics are categorized under realms, no two topics should have the same name under a realm.
 
@@ -32,7 +35,6 @@ To connect to the realm a password is necessary, which is provided by the group 
 ## Chat system
 
 Exchange code snippets or information in a rocket chat - join **http://chat.dmp.be.continental.cloud**
-
 
 ## Continous Integration
 
