@@ -39,7 +39,7 @@ DEFAULT_REALM = "realm1"
 DEFAULT_ROLE = "anonymous"
 DEFAULT_SIMU_NAME = "sumo"
 
-WAMP_TOPIC_PREFIX = "vehicle"
+WAMP_TOPIC_PREFIX = "com.conti.hackathon"
 
 
 class WampPublisher:
