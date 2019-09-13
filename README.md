@@ -18,7 +18,7 @@ Each team in the hackathon will create microservices. These microservices publis
 
 The service router can be found at:
 ```
-wss://dataplane.dmp.be.continental.cloud:8081/ws
+wss://continental2.crossbario.com/ws
 ```
 
 All teams share the service router, however each team is allocated a realm within the service router. Topics are categorized under realms, no two topics should have the same name under a realm.
@@ -59,7 +59,7 @@ After following this section a team will have their own Ethereum wallet with eth
 1. Click the menu icon in Metamask and click add new token
 2. Click Custom Token, copy paste the XBR Token address and click next.
 ```
-**0xCfEB869F69431e42cdB54A4F4f105C19C080A601** 
+0xCfEB869F69431e42cdB54A4F4f105C19C080A601
 ```
 3. From Metamask, copy your Ethereum address and paste it on the  hackathon chat.
 4. We will send you Ether and XBR Token, soon you will see your Ether and XBR Token balance updated.
