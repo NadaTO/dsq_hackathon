@@ -16,7 +16,10 @@ If you have any questions you can always ask our experts or team guides to help 
 ## Basic component architecture
 Each team in the hackathon will create microservices. These microservices publish to topics that can be subscribed to. The publishing and subscribing happens through the service router.
 
-The service router can be found at: **wss://dataplane.dmp.be.continental.cloud:8081/ws**
+The service router can be found at:
+```
+wss://dataplane.dmp.be.continental.cloud:8081/ws
+```
 
 All teams share the service router, however each team is allocated a realm within the service router. Topics are categorized under realms, no two topics should have the same name under a realm.
 
@@ -33,7 +36,6 @@ To connect to the realm a password is necessary, which is provided by the group 
 
 Exchange code snippets or information in a rocket chat - join **http://chat.dmp.be.continental.cloud**
 
-
 ## Continous Integration
 
 You can use the preapred Gitlab CI setup to deploy your HTML5 application to the destination.
@@ -47,9 +49,9 @@ After following this section a team will have their own Ethereum wallet with eth
 
 
 ### 1.1 Setup Metamask
-1. Metamask is a ligh client for Ethereum. It allows for creation and managing of Ethereum wallets. Metamask is a browser extension, using Chrome, Firefox, Opera or Brave install Metamask from: https://metamask.io/
+1. Metamask is a light client for Ethereum. It allows for creation and managing of Ethereum wallets. Metamask is a browser extension, using Chrome, Firefox, Opera or Brave install Metamask from: https://metamask.io/
 2. Once Metamask is installed it will prompt you to import or create new wallet, choose create new wallet, and choose a password for the new wallet.
-3. Metamask uses a seedphrase to derive private/public key pairs (a Ethereum wallet is a private/public key pair). Use the default seedphrase that is provided by Metamask, but copy it somewhere as in the next step you are required to input the seedphrase once again for confirmation. 
+3. Metamask uses a seedphrase to derive private/public key pairs (an Ethereum wallet is a private/public key pair). Use the default seedphrase that is provided by Metamask, but copy it somewhere as in the next step you are required to input the seedphrase once again for confirmation.
 4. Once the wallet is created open Metamask by clicking at the browser extension situated on the toolbar on the top right. By default Metamask uses Ethereum Main Network, change this by clicking on the label, from the dropdown choose Ropsten Test Network.
 
 
@@ -79,9 +81,39 @@ To get it up and running the following steps are needed:
 5. Check the output to see if your data gets bought.
 
 ## Task 3 - Become a service provider
+Upon completion of this task your team will have a service running that buys some data from the fleet simulation and sells something of your chosing to interested parties.
+It will also be useful for providing a service to enhance the life of your persona.
 
+To accomplish this task you will need to do the following:
+1. Decide whether you want to develop the service in in Node.js or Python3.
+2. Go to the `service/simple-js` or `service/simple-python` folder.
+3. Adapt the buyer code to use your buyer delegate address and buy data from your fleet-simulation.
+4. Change the seller code to use a new seller delegate key and sell on a topic of your choice.
+5. Forward/filter/transform some data from the seller to your buyer.
+6. Inform your team lead that you accomplished this task to earn the extra tokens.
+
+## Task 4 - Develop vehicle app
+The goal of this task is to develop an HMI application that shows up on the vehicle demonstrator.
+This app should be an HTML5 application that automatically gets deployed on code check-in into the GitLab server.
+It should fulfill the needs of a chosen persona with the help of data provided by your backend service.
+
+The following steps are needed to get it running:
 TODO!
 
-## Task 4 - Sell your idea
+## Task 5 - Sell your idea
+When the timer runs out you need to present your idea to the jury.
+The jury will invest 6000 tokens into the ideas of the hackteams.
+To convice them, you need to prepare a 12 minute presentation including:
+* Your team
+* The story and needs of your selected persona
+* The idea of your hackteam
+* High level details of implementation (It is a management jury)
+* Your Business model - Which data is monetized ? What is the target group & market ?
+* Show your app on the demonstrator
 
-TODO!
+It's up to you to present. You can prepare slides or use the whiteboard. Tell the story!
+The jury will evaluate your idea based on factors such as innovativeness, potential and feasability.
+After all presentation, invested tokens will be added at the end to your team wallet.
+
+## If you need help at any point, feel free to ask our experts to help you. Have fun at the hackathon !
+

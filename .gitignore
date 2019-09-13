@@ -59,3 +59,5 @@ typings/
 
 # next.js build output
 .next
+service/simple-js/package-lock.json
+service/simple-js/.vscode/launch.json
