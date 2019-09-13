@@ -47,9 +47,9 @@ After following this section a team will have their own Ethereum wallet with eth
 
 
 ### 1.1 Setup Metamask
-1. Metamask is a ligh client for Ethereum. It allows for creation and managing of Ethereum wallets. Metamask is a browser extension, using Chrome, Firefox, Opera or Brave install Metamask from: https://metamask.io/
+1. Metamask is a light client for Ethereum. It allows for creation and managing of Ethereum wallets. Metamask is a browser extension, using Chrome, Firefox, Opera or Brave install Metamask from: https://metamask.io/
 2. Once Metamask is installed it will prompt you to import or create new wallet, choose create new wallet, and choose a password for the new wallet.
-3. Metamask uses a seedphrase to derive private/public key pairs (a Ethereum wallet is a private/public key pair). Use the default seedphrase that is provided by Metamask, but copy it somewhere as in the next step you are required to input the seedphrase once again for confirmation. 
+3. Metamask uses a seedphrase to derive private/public key pairs (an Ethereum wallet is a private/public key pair). Use the default seedphrase that is provided by Metamask, but copy it somewhere as in the next step you are required to input the seedphrase once again for confirmation.
 4. Once the wallet is created open Metamask by clicking at the browser extension situated on the toolbar on the top right. By default Metamask uses Ethereum Main Network, change this by clicking on the label, from the dropdown choose Ropsten Test Network.
 
 
@@ -79,9 +79,21 @@ To get it up and running the following steps are needed:
 5. Check the output to see if your data gets bought.
 
 ## Task 3 - Become a service provider
+Upon completion of this task your team will have a service running that buys some data from the fleet simulation and sells something of your chosing to interested parties.
+It will also be useful for providing a service to enhance the life of your persona.
 
-TODO!
+To accomplish this task you will need to do the following:
+1. Decide whether you want to develop the service in in Node.js or Python3.
+2. Go to the `service/simple-js` or `service/simple-python` folder.
+3. Adapt the buyer code to use your buyer delegate address and buy data from your fleet-simulation.
+4. Change the seller code to use a new seller delegate key and sell on a topic of your choice.
+5. Forward/filter/transform some data from the seller to your buyer.
+6. Inform your team lead that you accomplished this task to earn the extra tokens.
 
-## Task 4 - Sell your idea
+## Task 4 - Develop vehicle app
+The goal of this task is to develop an HMI application that shows up on the vehicle demonstrator.
+This app should be an HTML5 application that automatically gets deployed on code check-in into the GitLab server.
+It should fulfill the needs of a chosen persona with the help of data provided by your backend service.
 
+The following steps are needed to get it running:
 TODO!
