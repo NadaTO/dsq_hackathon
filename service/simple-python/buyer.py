@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""Simple Buyer example.
+"""
+
 import binascii
 import os
 
@@ -8,12 +12,21 @@ from autobahn.wamp.types import SubscribeOptions
 from autobahn.twisted.component import Component, run
 from autobahn.twisted.xbr import SimpleBuyer
 
+DEFAULT_AUTHID = 'teamX'
+DEFAULT_TICKET = 'catchy phrase words here'
+
 comp = Component(
-    transports=os.environ.get('XBR_INSTANCE', 'ws://localhost:8080/ws'),
+    transports=os.environ.get('XBR_INSTANCE', 'wss://continental2.crossbario.com/ws'),
     realm=os.environ.get('XBR_REALM', 'realm1'),
+    authentication={
+        'ticket': {
+            'authid': os.environ.get('XBR_AUTHID', DEFAULT_AUTHID),
+            'ticket': os.environ.get('XBR_TICKET', DEFAULT_TICKET),
+        },
+    },
     extra={
         'market_maker_adr': os.environ.get('XBR_MARKET_MAKER_ADR', '0x3e5e9111ae8eb78fe1cc3bb8915d5d461f3ef9a9'),
-        'buyer_privkey': os.environ.get('XBR_BUYER_PRIVKEY', '0x395df67f0c2d2d9fe1ad08d1bc8b6627011959b79c53d7dd6a3536a33ab8a4fd'),
+        'buyer_privkey': os.environ.get('XBR_BUYER_PRIVKEY', '0xPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPKEY'),
     }
 )
 

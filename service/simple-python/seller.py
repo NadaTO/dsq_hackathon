@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""Simple Seller example.
+"""
+
 import binascii
 import os
 from time import sleep
@@ -11,12 +15,21 @@ from autobahn.twisted.component import Component, run
 from autobahn.twisted.util import sleep
 from autobahn.twisted.xbr import SimpleSeller
 
+DEFAULT_AUTHID = 'teamX'
+DEFAULT_TICKET = 'catchy phrase words here'
+
 comp = Component(
-    transports=os.environ.get('XBR_INSTANCE', 'ws://localhost:8080/ws'),
+    transports=os.environ.get('XBR_INSTANCE', 'wss://continental2.crossbario.com/ws'),
     realm=os.environ.get('XBR_REALM', 'realm1'),
+    authentication={
+        'ticket': {
+            'authid': os.environ.get('XBR_AUTHID', DEFAULT_AUTHID),
+            'ticket': os.environ.get('XBR_TICKET', DEFAULT_TICKET),
+        },
+    },
     extra={
         'market_maker_adr': os.environ.get('XBR_MARKET_MAKER_ADR', '0x3e5e9111ae8eb78fe1cc3bb8915d5d461f3ef9a9'),
-        'seller_privkey': os.environ.get('XBR_SELLER_PRIVKEY', '0xadd53f9a7e588d003326d1cbf9e4a43c061aadd9bc938c843a79e7b4fd2ad743'),
+        'seller_privkey': os.environ.get('XBR_SELLER_PRIVKEY', '0xPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPKEY'),
     }
 )
 
