@@ -59,13 +59,14 @@ After following this section a team will have their own Ethereum wallet with eth
 1. Click the menu icon in Metamask and click add new token
 2. Click Custom Token, copy paste the XBR Token address and click next.
 ```
-**0x513e562afeF8e000dcA06FCb246Cff3ec76CC088** 
+**0xCfEB869F69431e42cdB54A4F4f105C19C080A601** 
 ```
 3. From Metamask, copy your Ethereum address and paste it on the  hackathon chat.
 4. We will send you Ether and XBR Token, soon you will see your Ether and XBR Token balance updated.
 
 ### 1.3 Open Payment Channel
-
+Register and open a payment channel from here:
+http://iaa2019-hackathon-apps.s3-website.eu-central-1.amazonaws.com/
 
 
 ## Task 2 - Time is money
@@ -98,7 +99,16 @@ This app should be an HTML5 application that automatically gets deployed on code
 It should fulfill the needs of a chosen persona with the help of data provided by your backend service.
 
 The following steps are needed to get it running:
-TODO!
+* In the `app/` folder you need to work the following files:
+  * `index.html`
+  * `main.js`
+1. Receive persona private key from your team lead.
+2. Make the appropiate config changes to `main.js`.
+3. Implement a example rpc call in the service provider from previous task. The buy data button shall become active after the rpc call is made.
+4. Implement purchasing of keys from the service provider with the click of the buy button.
+5. Display the bought data on the frontend.
+6. Check if you receive tokens from the persona.
+
 
 ## Task 5 - Sell your idea
 When the timer runs out you need to present your idea to the jury.
