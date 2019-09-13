@@ -101,7 +101,7 @@ The following steps are needed to get it running:
 TODO!
 
 ## Task 5 - Sell your idea
-When the timer runs out of time you will present your idea to the jury.
+When the timer runs out you need to present your idea to the jury.
 The jury will invest 6000 tokens into the ideas of the hackteams.
 To convice them, you need to prepare a 12 minute presentation including:
 * Your team
