@@ -97,3 +97,21 @@ It should fulfill the needs of a chosen persona with the help of data provided b
 
 The following steps are needed to get it running:
 TODO!
+
+## Task 5 - Sell your idea
+When the timer runs out of time you will present your idea to the jury.
+The jury will invest 6000 tokens into the ideas of the hackteams.
+To convice them, you need to prepare a 12 minute presentation including:
+* Your team
+* The story and needs of your selected persona
+* The idea of your hackteam
+* High level details of implementation (It is a management jury)
+* Your Business model - Which data is monetized ? What is the target group & market ?
+* Show your app on the demonstrator
+
+It's up to you to present. You can prepare slides or use the whiteboard. Tell the story!
+The jury will evaluate your idea based on factors such as innovativeness, potential and feasability.
+After all presentation, invested tokens will be added at the end to your team wallet.
+
+## If you need help at any point, feel free to ask our experts to help you. Have fun at the hackathon !
+
