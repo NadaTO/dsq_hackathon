@@ -21,16 +21,17 @@ The service router can be found at:
 wss://continental2.crossbario.com/ws
 ```
 
-All teams share the service router, however each team is allocated a realm within the service router. Topics are categorized under realms, no two topics should have the same name under a realm.
+All teams share the service router, and the realm on this router(`realm1`). Topics are categorized under realms, no two topics should have the same name under a realm.
+For that reason each team is only allowed to work on topics with a specific prefix.
 
-Depending on your team, the realm allocated to your team is as follows:
+Depending on your team, the prefix allocated to your team is as follows:
 
-1. Team 1: realm1
-2. Team 2: realm2
-3. Team 3: realm3
-4. Team 4: realm4
+1. Team 1: com.conti.hackathon.team1
+2. Team 2: com.conti.hackathon.team2
+3. Team 3: com.conti.hackathon.team3
+4. Team 4: com.conti.hackathon.team4
 
-To connect to the realm a password is necessary, which is provided by the group leader.
+To connect to the realm a username (`teamX`) and password is necessary, which is provided by the group leader.
 
 ## Chat system
 
