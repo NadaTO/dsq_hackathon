@@ -50,7 +50,7 @@ The following parameters are available:
 
 The fleet simulation publishes data about events that happen while the simulation is run on WAMP.
 Each vehicle of the simulation has its own topics it will publish on.
-The format of the topics is `vehicle.<name>.<id>.<event>`.
+The format of the topics is `com.conti.hackathon.<name>.<id>.<event>`.
 
 If the `--privkey` option is provided or the `FLEET_SIM_PRIVKEY` environment variable is set the simulation will encrypt the data before publishing.
 
