@@ -46,15 +46,17 @@ Please rename the file accordingly. Only commits on MASTER will be deployed.
 After following this section a team will have their own Ethereum wallet with ether and XBR tokens, which are necessary for the participation of the hackathon. The major steps are:
 1. Setup Metamask
 2. Request Ether & XBR
-3. Open Payment Channel
-
+3. Open Seller Channel
+4. Open Buyer Channel
 
 ### 1.1 Setup Metamask
+Two of your team members will have to follow this.
+One of them will be the master wallet for your team used for the scoring of the hackathon and the other represents the persona interested in your service.
+The keys created in the following steps are very important. Do not lose them or the passwords securing them.
 1. Metamask is a light client for Ethereum. It allows for creation and managing of Ethereum wallets. Metamask is a browser extension, using Chrome, Firefox, Opera or Brave install Metamask from: https://metamask.io/
 2. Once Metamask is installed it will prompt you to import or create new wallet, choose create new wallet, and choose a password for the new wallet.
 3. Metamask uses a seedphrase to derive private/public key pairs (an Ethereum wallet is a private/public key pair). Use the default seedphrase that is provided by Metamask, but copy it somewhere as in the next step you are required to input the seedphrase once again for confirmation.
-4. Once the wallet is created open Metamask by clicking at the browser extension situated on the toolbar on the top right. By default Metamask uses Ethereum Main Network, change this by clicking on the label, from the dropdown choose Ropsten Test Network.
-
+4. Once the wallet is created open Metamask by clicking at the browser extension situated on the toolbar on the top right. By default Metamask uses Ethereum Main Network, change this by clicking on the label and from the dropdown choose Custom RPC. Enter a Name you like and `http://continental1.crossbario.com:1545` as New RPC URL. Everything else can be left blank.
 
 ### 1.2 Request Ether & XBR
 1. Click the menu icon in Metamask and click add new token
@@ -62,13 +64,19 @@ After following this section a team will have their own Ethereum wallet with eth
 ```
 0xCfEB869F69431e42cdB54A4F4f105C19C080A601
 ```
-3. From Metamask, copy your Ethereum address and paste it on the  hackathon chat.
+3. From Metamask, copy your Ethereum address and paste it on the hackathon chats' #general channel. Please include your team number and wether you represent your team or the persona.
 4. We will send you Ether and XBR Token, soon you will see your Ether and XBR Token balance updated.
 
-### 1.3 Open Payment Channel
+### 1.3 Open Seller Channel
+The member representing your team/service provider has to open a Seller Channel to be able to sell data on the market.
 Register and open a payment channel from here:
 http://iaa2019-hackathon-apps.s3-website.eu-central-1.amazonaws.com/
+There is no real need to register as a buyer and you should not open a Buyer Channel from that wallet.
 
+### 1.4 Open Buyer Channel
+The member in charge of your teams' persona wallet wil have to open a Buyer Channel on the following page:
+http://iaa2019-hackathon-apps.s3-website.eu-central-1.amazonaws.com/
+You don't have to open a Seller Channel from this wallet.
 
 ## Task 2 - Time is money
 After this task you will have a service running that sells some data on the market and earns XBR tokens for your team.
