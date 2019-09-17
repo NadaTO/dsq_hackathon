@@ -91,7 +91,7 @@ To accomplish this task you will need to do the following:
 2. Go to the `service/simple-js` or `service/simple-python` folder.
 3. Adapt the buyer code to use your buyer delegate address and buy data from your fleet-simulation.
 4. Change the seller code to use a new seller delegate key and sell on a topic of your choice.
-5. Forward/filter/transform some data from the seller to your buyer.
+5. Forward/filter/transform some data from your buyer to the seller.
 6. Inform your team lead that you accomplished this task to earn the extra tokens.
 
 ## Task 4 - Develop vehicle app
@@ -110,6 +110,8 @@ The following steps are needed to get it running:
 5. Display the bought data on the frontend.
 6. Check if you receive tokens from the persona.
 
+To get the automatic deployment working you have to adapt the `.gitlab-ci-template.yml` file and rename it to `.gitlab-ci.yml`.
+After that your HMI showing on our demonstrator is just a `git push` away!
 
 ## Task 5 - Sell your idea
 When the timer runs out you need to present your idea to the jury.
