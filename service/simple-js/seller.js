@@ -15,12 +15,20 @@ const TEAM_ID = "<TEAM_ID>";
 const TICKET = "<TICKET>";
 //TOPIC TO SUBSCRIBE TO
 const TOPIC = "<TOPIC>";
+//Service name
+SERVICE_NAME = "simple buyer JS example service",
+//Service type
+SERVICE_TYPE = "buyer"
 
 //Connect to Crossbarfx node
 var connection = new autobahn.Connection({
     realm: "realm1",
     authmethods: ["ticket"],
     authid: TEAM_ID,
+    authextra: {
+      service_name: SERVICE_NAME,
+      type: SERVICE_TYPE
+    },
     onchallenge: onchallenge,
     transports: [
       {
@@ -30,7 +38,7 @@ var connection = new autobahn.Connection({
       }
     ]
   });
-  
+
   //Only for authentication on crossbar
   function onchallenge(session, method, extra) {
     if (method === "ticket") {

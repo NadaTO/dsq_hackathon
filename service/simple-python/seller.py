@@ -18,6 +18,10 @@ from autobahn.twisted.xbr import SimpleSeller
 DEFAULT_AUTHID = 'teamX'
 DEFAULT_TICKET = 'catchy phrase words here'
 
+TOPIC = 'io.crossbar.example'
+SERVICE_NAME = 'simple seller python example service'
+SERVICE_TYPE = 'seller'
+
 comp = Component(
     transports=os.environ.get('XBR_INSTANCE', 'wss://continental2.crossbario.com/ws'),
     realm=os.environ.get('XBR_REALM', 'realm1'),
@@ -25,6 +29,10 @@ comp = Component(
         'ticket': {
             'authid': os.environ.get('XBR_AUTHID', DEFAULT_AUTHID),
             'ticket': os.environ.get('XBR_TICKET', DEFAULT_TICKET),
+            'authextra': {
+                'service_name': SERVICE_NAME,
+                'type': SERVICE_TYPE,
+            },
         },
     },
     extra={
@@ -48,7 +56,7 @@ async def joined(session, details):
     seller_privkey = binascii.a2b_hex(session.config.extra['seller_privkey'][2:])
 
     api_id = UUID('627f1b5c-58c2-43b1-8422-a34f7d3f5a04').bytes
-    topic = 'io.crossbar.example'
+    topic = TOPIC
     counter = 1
 
     seller = SimpleSeller(market_maker_adr, seller_privkey)

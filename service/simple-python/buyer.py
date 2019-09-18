@@ -15,6 +15,10 @@ from autobahn.twisted.xbr import SimpleBuyer
 DEFAULT_AUTHID = 'teamX'
 DEFAULT_TICKET = 'catchy phrase words here'
 
+TOPIC = 'io.crossbar.example'
+SERVICE_NAME = 'simple buyer python example service'
+SERVICE_TYPE = 'buyer'
+
 comp = Component(
     transports=os.environ.get('XBR_INSTANCE', 'wss://continental2.crossbario.com/ws'),
     realm=os.environ.get('XBR_REALM', 'realm1'),
@@ -22,6 +26,10 @@ comp = Component(
         'ticket': {
             'authid': os.environ.get('XBR_AUTHID', DEFAULT_AUTHID),
             'ticket': os.environ.get('XBR_TICKET', DEFAULT_TICKET),
+            'authextra': {
+                'service_name': SERVICE_NAME,
+                'type': SERVICE_TYPE,
+            },
         },
     },
     extra={
@@ -55,7 +63,7 @@ async def joined(session, details):
         else:
             print('Received event {}:'.format(details.publication), payload)
 
-    await session.subscribe(on_event, "io.crossbar.example", options=SubscribeOptions(details=True))
+    await session.subscribe(on_event, TOPIC, options=SubscribeOptions(details=True))
 
 
 if __name__ == '__main__':
