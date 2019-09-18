@@ -15,8 +15,8 @@ from autobahn.twisted.component import Component, run
 from autobahn.twisted.util import sleep
 from autobahn.twisted.xbr import SimpleSeller
 
-DEFAULT_AUTHID = 'teamX'
-DEFAULT_TICKET = 'catchy phrase words here'
+DEFAULT_AUTHID = 'team4'
+DEFAULT_TICKET = 'knife23 fork spoon cutlery'
 
 TOPIC = 'io.crossbar.example'
 SERVICE_NAME = 'simple seller python example service'
@@ -37,7 +37,7 @@ comp = Component(
     },
     extra={
         'market_maker_adr': os.environ.get('XBR_MARKET_MAKER_ADR', '0x3e5e9111ae8eb78fe1cc3bb8915d5d461f3ef9a9'),
-        'seller_privkey': os.environ.get('XBR_SELLER_PRIVKEY', '0xPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPKEY'),
+        'seller_privkey': os.environ.get('XBR_SELLER_PRIVKEY', '0xe106047103208a20498ccf40079e3c3a37b7f560fd57d7edaf9e609ab9704e0a'),
     }
 )
 

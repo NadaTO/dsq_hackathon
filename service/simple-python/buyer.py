@@ -12,8 +12,8 @@ from autobahn.wamp.types import SubscribeOptions
 from autobahn.twisted.component import Component, run
 from autobahn.twisted.xbr import SimpleBuyer
 
-DEFAULT_AUTHID = 'teamX'
-DEFAULT_TICKET = 'catchy phrase words here'
+DEFAULT_AUTHID = 'team4'
+DEFAULT_TICKET = 'knife23 fork spoon cutlery'
 
 TOPIC = 'io.crossbar.example'
 SERVICE_NAME = 'simple buyer python example service'
@@ -34,7 +34,7 @@ comp = Component(
     },
     extra={
         'market_maker_adr': os.environ.get('XBR_MARKET_MAKER_ADR', '0x3e5e9111ae8eb78fe1cc3bb8915d5d461f3ef9a9'),
-        'buyer_privkey': os.environ.get('XBR_BUYER_PRIVKEY', '0xPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPRIVATEKEYPKEY'),
+        'buyer_privkey': os.environ.get('XBR_BUYER_PRIVKEY', '0x2d48f8f2f25d6c2f2e76e8337c6d9ef9e0aecdd198eaf61d7f3b831ae1652d75'),
     }
 )
 
