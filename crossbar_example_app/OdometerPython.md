@@ -1,6 +1,8 @@
 # Odometer Example using Python
 To start running the example code we need to install the python version 3.7.2 or above. Follow the link to [install Python](./InstallPython.md). After installing the Python, for running each component you need to use the [Python virtual environment](./PythonVirtualenv.md).
 
+Note: These examples connect as anonymous, without authentication. For usage in your own app, you need to add ticket authentication. For how to do this see at the end of this tutorial.
+
 ## Fetching the code 
 Where to get the source from?
 ## Installing dependencies
@@ -410,3 +412,50 @@ connection.open();
 Output:
 ![](./images/Screenshot_Display.png)
 
+
+## Authenticate as your team
+
+The above examples do not authenticate in any way. 
+
+For your own, app, you need to authenticate as your team.
+
+To do so, replace e.g.
+
+
+```
+// WAMP connection
+buyer_component = Component(
+    transports=os.environ.get('XBR_INSTANCE', u'ws://localhost:8080/ws'),
+    realm=os.environ.get('XBR_REALM', u'realm1'),
+    extra=extra
+)
+```
+
+with 
+
+
+```
+// WAMP connection
+buyer_component = Component(
+    transports=os.environ.get('XBR_INSTANCE', u'wss://continental2.crossbario.com/ws'),
+    realm=os.environ.get('XBR_REALM', u'realm1'),
+    authentication={
+        'ticket': {
+            'authid': team,
+            'ticket': ticket,
+        },
+    }
+    extra=extra,
+    authextra={
+        'type': serviceType,
+        'service_name': serviceName
+    }
+)
+```
+
+where:
+
+- "ticket" is your team's authentication ticket --> ask team advisor/expert
+- "team" is your team name, e.g. "team1", "team4"
+- "serviceName": a string that is displayed along your service on the hackathon dashboard, e.g. "parking_source"
+- "serviceType": a string which is used to determine the icon to show for your service - values with distinct icons are "seller", "buyer", "fleet", "app", "poi", else a default icon is shown

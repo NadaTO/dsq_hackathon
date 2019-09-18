@@ -12,6 +12,8 @@ Note: Remember the package.json which resides in dsq-hackathon/hack19-visu/docs/
 ## Odometer component
 The application reads the Crossbario URL from the environment variable **XBR_INSTANCE** and starts publishing the odometer count and the current time to the topic `xbr.myapp.odometer`
 
+Note: These examples connect as anonymous, without authentication. For usage in your own app, you need to add ticket authentication. For how to do this see at the end of this tutorial.
+
 ### Odometer.js
 ```js
 // Example WAMP client for AutobahnJS connecting to a Crossbar.io WAMP router.
@@ -497,5 +499,64 @@ Output:
 ![](./images/Screenshot_Display.png)
 
 
+## Authenticate as your team
+
+The above examples do not authenticate in any way. 
+
+For your own, app, you need to authenticate as your team.
+
+To do so, replace 
+
+
+
+```
+// WAMP connection
+var connection = new autobahn.Connection({
+    realm: realm,
+    transports: [
+        {
+            url: url, 
+            type: 'websocket',
+            serializers: [ new autobahn.serializer.CBORSerializer() ],
+        }
+    ]
+});
+```
+
+with 
+
+
+```
+// WAMP connection
+function onchallenge (session, method, extra) {
+    // console.log("onchallenge", method, extra);
+  if (method === "ticket") {
+      return ticket;
+  } else {
+      throw "don't know how to authenticate using '" + method + "'";
+  }
+}
+
+// the WAMP connection to the Router
+//
+self.connection = new autobahn.Connection({
+  url: wsuri,         
+  realm: "realm1",
+  authmethods: ["ticket"],
+  authid: team,
+  onchallenge: onchallenge,
+  authextra: {
+      type: serviceType,
+      service_name: serviceName
+  }
+});
+```
+
+where:
+
+- "ticket" is your team's authentication ticket --> ask team advisor/expert
+- "team" is your team name, e.g. "team1", "team4"
+- "serviceName": a string that is displayed along your service on the hackathon dashboard, e.g. "parking_source"
+- "serviceType": a string which is used to determine the icon to show for your service - values with distinct icons are "seller", "buyer", "fleet", "app", "poi", else a default icon is shown
 
 
