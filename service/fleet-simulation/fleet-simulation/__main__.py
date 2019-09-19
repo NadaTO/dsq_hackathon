@@ -71,8 +71,8 @@ class SellingPublisher:
         seller_privkey = binascii.a2b_hex(session.config.extra['seller_privkey'][2:])
 
         seller = SimpleSeller(market_maker_adr, seller_privkey)
-        price = 35 * 10 ** 18
-        interval = 300
+        price = 100 * 10 ** 18
+        interval = 1
 
         seller.add(self._api_id, self._topic, price, interval, None)
         balance = await seller.start(session)

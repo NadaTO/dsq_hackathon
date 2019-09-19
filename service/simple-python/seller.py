@@ -18,7 +18,7 @@ from autobahn.twisted.xbr import SimpleSeller
 DEFAULT_AUTHID = 'team4'
 DEFAULT_TICKET = 'knife23 fork spoon cutlery'
 
-TOPIC = 'io.crossbar.example'
+TOPIC = 'com.conti.hackathon.team4.seller'
 SERVICE_NAME = 'simple seller python example service'
 SERVICE_TYPE = 'seller'
 
@@ -37,7 +37,7 @@ comp = Component(
     },
     extra={
         'market_maker_adr': os.environ.get('XBR_MARKET_MAKER_ADR', '0x3e5e9111ae8eb78fe1cc3bb8915d5d461f3ef9a9'),
-        'seller_privkey': os.environ.get('XBR_SELLER_PRIVKEY', '0xe106047103208a20498ccf40079e3c3a37b7f560fd57d7edaf9e609ab9704e0a'),
+        'seller_privkey': os.environ.get('XBR_SELLER_PRIVKEY', '0xAF5648AAB4CB8582FA6F1A678D49009EDE489BC5B25F6F38CD351EC98C29D97A'),
     }
 )
 
@@ -60,8 +60,8 @@ async def joined(session, details):
     counter = 1
 
     seller = SimpleSeller(market_maker_adr, seller_privkey)
-    price = 35 * 10 ** 18
-    interval = 10
+    price = 1 * 10 ** 18
+    interval = 20
     seller.add(api_id, topic, price, interval, None)
 
     balance = await seller.start(session)
