@@ -1,81 +1,136 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Persona App Example</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <style>
-    body {
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
-  </style>
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Title Page-->
+    <title>search a parking deal</title>
 
-  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/airport-parking-936.jpg?itok=XOY0APdm");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.column{
+float:left;
+width:50%;
+}
+.row:after{
+content:"";
+display:table;
+clear:both;
+}
+</style>
 </head>
 
-<body>
-  <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Persona Example App</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-      </div>
-      <!--/.navbar-collapse -->
-    </div>
-  </nav>
+<body class="bg" >
+<center>
+    <div class="page-wrapper p-t-130 p-b-110 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                   <h2 class="title">Find parking car deals - Save Big!</h2>
+                    <form method="POST">
+						<div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Your full Name" name="Your Full Name" required>
+                        </div>
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Persona Example App</h1>
-      <p>This is a example app and a template for getting started with Task 4. The persona app uses Bootstrap 4, you can find documentation on Bootstrap components <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_blank">here</a>
-      </p>
-      <div style="width: 50%; margin-left: auto; margin-right: auto; margin-top: 50px">
-        <p><a id="opt_in_button" class="btn btn-info btn-lg btn-block" href="#" role="button">Example RPC Call</a></p>
-        <p><a id="buy_data_button" class="btn btn-primary btn-lg btn-block" href="#" role="button" disabled>Start Buying Data</a></p>
-      </div>
-    </div>
-  </div>
+						<div class="row">
+						<div class="column">
+                        <div class="input-group">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="departure date" name="departure date" required>
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+						</div>
+												<div class="column">
 
-  <div class="container">
-    <ul id="list-group" class="list-group">
-    </ul>
-    <footer>
-    </footer>
-  </div> <!-- /container -->
-  <script src="js/vendor/jquery-1.11.2.min.js"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/cbor.js"></script>
-  <script src="js/autobahn-xbr.js"></script>
-  <script src="js/autobahn.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-  </script>
-</body>
+						<div class="input-group">
+						<input class="input--style-3" type="time" id="appt" name="appt" required>
+                        </div>
+						                        </div>
+
+						</div>
+
+						<div class="row">
+						<div class="column">
+
+						 <div class="input-group">
+                            <input class="input--style-3 js-datepicker" type="text" placeholder="Arrival date" name="Arrival date">
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+						</div>
+												<div class="column">
+
+						<div class="input-group">
+						<input class="input--style-3" type="time" id="appt" name="appt" required>
+                        </div>
+												</div>
+
+						<div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Airport Name" name="Airport Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="number" placeholder="Phone Number" name="Phone Number" required>
+                        </div>
+
+                    </form>
+					   <div class="p-t-10">
+                            <a href="list_agent.html"><button class="btn btn--pill btn--green">Search offers</button></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
+<!-- end document-->
