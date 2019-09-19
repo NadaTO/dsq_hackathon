@@ -262,6 +262,14 @@ h6 {
   background: #4dae3c;
 }
 
+
+.btn--blue {
+  background: #00AFF5;
+}
+
+.btn--blue:hover {
+  background: #00AFF5;
+}
 /* ==========================================================================
    #DATE PICKER
    ========================================================================== */
@@ -519,6 +527,8 @@ input {
     padding-top: 400px;
     background-position: center center;
   }
+  
+
   .card-3 .card-body {
     display: block;
     width: 100%;

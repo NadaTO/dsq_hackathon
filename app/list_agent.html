@@ -96,16 +96,46 @@ body {font-family: Arial, Helvetica, sans-serif;}
             height:300px;
             width: 100%;
         }
+h1{
+color:black;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/airport-parking-936.jpg?itok=XOY0APdm");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.element {
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+
+
 </style>
 </head>
 
-<body>
-    <div class="page-wrapper bg-gra-01 p-t-130 p-b-110 font-poppins">
+<body class="bg">
+    <div class="page-wrapper  p-t-130 p-b-110 font-poppins">
         <div class="wrapper wrapper--w780">
+		<div class="element">
             <div class="card card-3">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
+                    <h1>Registration Info</h1>
 					                        <div class="tm-notification-items">
                             <div class="media tm-notification-item">
                                 <div class="tm-gray-circle"><img src="img/notification-01.jpg" alt="Avatar Image" class="rounded-circle"></div>
@@ -139,7 +169,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </div>
 
 
-<button class="btn btn-success">Book</button>
+<button class="btn btn-success" onclick="books()">Book</button>
 
                                 </div>
                             </div>
@@ -214,6 +244,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         </div>
                 </div>
             </div>
+			</div>
         </div>
     </div>
 
@@ -243,6 +274,11 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+
+
+function books() {
+  alert("Your Request Was Sent To The Agent..");
 }
 
 </script>
