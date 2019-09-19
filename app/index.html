@@ -24,7 +24,7 @@
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
-	
+
 <style>
 body, html {
   height: 100%;
@@ -53,11 +53,16 @@ content:"";
 display:table;
 clear:both;
 }
+
+.element {
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
 </style>
 </head>
 
 <body class="bg" >
-<center>
     <div class="page-wrapper p-t-130 p-b-110 font-poppins">
         <div class="wrapper wrapper--w780">
 				<div class="element">
@@ -113,21 +118,22 @@ clear:both;
                         </div>
 
                     </form>
-					  
+
                 </div>
 				 <div class="p-t-10">
                             <a href="list_agent.html"><button class="btn btn--pill btn--green">Search offers</button></a>
                         </div>
-						
+
 							 <div class="p-t-10">
                             <a href="login_agent.html"><button type="button" class="btn btn--pill btn--blue">Offer Your Parking</button></a>
                         </div>
             </div>
         </div>
+      </div>
+
 		</div>
     </div>
 </div>
-</center>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
